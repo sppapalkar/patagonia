@@ -13,7 +13,7 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('first_name')
-            messages.success(request, f'Account created for {username}!')
+            messages.success(request, f'Account successfully created! Please log in')
             return redirect('users-home')
     else:
         form = CustomUserCreationForm()
