@@ -5,6 +5,11 @@
             <h2 class="heading ">Patients</h2>
         </div>
         <div class="card-body">
+            <div class="options">
+                <a class="btn btn-success float-right" href="{% url 'patient-create'%}">Add New Patient</a>
+                <br> <br>
+            </div>
+
             <table style="..." class="table table-striped">
                 <thead>
                     <tr>
@@ -59,6 +64,10 @@
                     {% endfor %}
                 </tbody>
             </table>
+            {% if not patients %}
+                <p class="text-center">No Patients Found</p>
+            {% endif %}
         </div>
     </div>
+
 {% endblock content %}

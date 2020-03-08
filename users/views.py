@@ -5,6 +5,8 @@ from .forms import CustomUserCreationForm
 
 
 def register(request):
+    if request.user.is_authenticated:
+        return redirect('patient-index')
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
