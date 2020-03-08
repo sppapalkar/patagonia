@@ -1,4 +1,29 @@
 {% extends "users/base.html" %}
 {% block content %}
     <h1>Patient List</h1>
+    <table style="..." class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+                <tr>
+                    <td>{{ patient.id }}</td>
+                    <td>{{ patient.first_name }}</td>
+                    <td>{{ patient.last_name }}</td>
+                    <td>{{ patient.email }}</td>
+                    <td>
+                        <a class="btn btn-secondary" href="{% url 'patient-update' patient.id %}">Update</a>
+                        <a class="btn btn-danger" href="{% url 'patient-delete' patient.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
