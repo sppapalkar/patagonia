@@ -17,6 +17,6 @@ class Patient(models.Model):
         return self.email
 
     def get_absolute_url(self):
-        return reverse('patients-index')
+        return reverse('patient-index')
 
 
