@@ -1,0 +1,13 @@
+body{
+    background: #F3F5F7;
+}
+.navbar{
+    min-height: 95px;
+    border: 1px solid #E9ECEE;
+}
+.nav-tabs{
+    border-bottom: 2px solid #E9ECEE;
+}
+footer{
+    background: #3B4045;
+}
