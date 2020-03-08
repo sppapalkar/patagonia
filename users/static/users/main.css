@@ -1,6 +1,11 @@
+html{
+    height: 100%;
+}
 body{
+    height: 100%;
     background: #F3F5F7;
 }
+#main
 .navbar{
     min-height: 95px;
     border: 1px solid #E9ECEE;
@@ -11,8 +16,9 @@ body{
     margin-bottom: 25px;
 }
 .content-section{
-    padding: 5% 3%;
+    padding: 5.5% 2.5%;
     border: 2px solid #E9ECEE;
+    margin-bottom: 25px;
 }
 footer{
     background: #3B4045;
