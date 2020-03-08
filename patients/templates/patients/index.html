@@ -24,7 +24,36 @@
                             <td>{{ patient.email }}</td>
                             <td>
                                 <a class="btn btn-secondary" href="{% url 'patient-update' patient.id %}">Update</a>
-                                <a class="btn btn-danger" href="{% url 'patient-delete' patient.id %}">Delete</a>
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#fm-modal-grid">Delete</button>
+                                <div class="modal fade" id="fm-modal-grid" tabindex="-1" role="dialog" aria-labelledBy="fm-modal-grid" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title heading">Delete Patient</h5>
+                                                <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-12 col-sm-6">
+                                                            <p>Are you sure you want to delete patient {{patient.first_name}}?</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <form action="{% url 'patient-delete' patient.id %}" method="POST">
+                                                    {% csrf_token %}
+                                                    <button class="btn btn-danger">Delete</button>
+                                                </form>
+                                                <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     {% endfor %}
