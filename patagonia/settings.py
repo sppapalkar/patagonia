@@ -25,7 +25,7 @@ SECRET_KEY = '4+41i%2vi7*zrb*sw($_h+_e@95jfur9o4z08k*yqs!ok1(yzj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['patagoniaapp.herokuapp.com']
 
 
 # Application definition
